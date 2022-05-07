@@ -55,7 +55,7 @@ function displayOrderDetails(orderToDisplay) {
   let orderList = $("ul#orders");
   let htmlForOrderList = "";
   orderToDisplay.items.forEach(function(item) {
-    htmlForOrderList += "<li>" + item.size + "size pizza with" + item.listToppingsOrdered() + "</li>"
+    htmlForOrderList += "<li>" + item.size + "size pizza with" + item.listToppingsOrdered() + ". Price: " + item.price + "</li>"
   });
 }
 
