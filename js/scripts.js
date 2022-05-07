@@ -38,7 +38,26 @@ Pizza.prototype.priceByToppings = function() {
   });
 }
 
+Pizza.prototype.listToppingsOrdered = function() {
+  let htmlForToppingsOrdered = "";
+  for (let i = 0; i < this.toppings.length; i++) {
+    htmlForToppingsOrdered += this.toppings[i];
+    if (i < this.toppings.length - 1) {
+      htmlForToppingsOrdered += ", ";
+    }
+  }
+  return htmlForToppingsOrdered;
+}
+
 let customerOrder = new CustomerOrder();
+
+function displayOrderDetails(orderToDisplay) {
+  let orderList = $("ul#orders");
+  let htmlForOrderList = "";
+  orderToDisplay.items.forEach(function(item) {
+    htmlForOrderList += "<li>" + item.size + "size pizza with" + item.listToppingsOrdered() + "</li>"
+  });
+}
 
 $(document).ready(function() {
   $("form#pizza-order").submit(function(event) {
