@@ -3,7 +3,11 @@
 // allow user can order multiple pizzas (probably need something like addressbook). Would you like to order more? If yes, new form. If no, display total $$ for the order and button to place order
 
 function CustomerOrder() {
-  this.items = {};
+  this.items = [];
+}
+
+CustomerOrder.prototype.addToOrder = function(newOrder) {
+  this.items.push(newOrder);
 }
 
 function Pizza (toppings, size) {
@@ -42,7 +46,7 @@ $(document).ready(function() {
     const toppings = $("input#toppings").val();
     const size = $("input#size").val();
     let newOrder = new Pizza(toppings, size);
-    newOrder.price = newOrder.priceBySize + newOrder.priceByToppings;
+    newOrder.price = newOrder.priceBySize() + newOrder.priceByToppings();
     customerOrder.addToOrder(newOrder);
     displayOrderDetails(customerOrder);
   });
