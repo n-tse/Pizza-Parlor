@@ -60,11 +60,12 @@ let customerOrder = new CustomerOrder();
 
 function displayOrderDetails(orderToDisplay) {
   let orderList = $("ul#orders");
-  let htmlForOrderList = "";
-  orderToDisplay.items.forEach(function(item) {
-    htmlForOrderList += "<li>" + item.size + "size pizza with" + item.listToppingsOrdered() + ". Price: " + item.price + "</li>"
-  });
-  orderList.html(htmlForOrderList);
+  orderList.html("<li> test </li>")
+  // let htmlForOrderList = "";
+  // orderToDisplay.items.forEach(function(item) {
+  //   htmlForOrderList += "<li>" + item.size + "size pizza with" + item.listToppingsOrdered() + ". Price: " + item.price + "</li>"
+  // });
+  // orderList.html(htmlForOrderList);
 }
 
 $(document).ready(function() {
