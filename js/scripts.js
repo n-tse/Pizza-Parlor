@@ -6,10 +6,32 @@ function customerOrder() {
   this.items = {};
 }
 
-function Pizza (toppings, size, price) {
+function Pizza (toppings, size) {
   this.toppings = [];
-  this.size = medium;
+  this.size = "medium";
   this.price = 6;
 }
+
+Pizza.prototype.priceBySize = function() {
+  if (this.size === "small") {
+    this.price === 5;
+  } else if (this.size === "large") {
+    this.price === 7;
+  } else if (this.size === "x-large") {
+    this.price === 8;
+  }
+  return this.price;
+}
+
+$(document).ready(function() {
+  $("form#pizza-order").submit(function(event) {
+    event.preventDefault();
+    const toppings = $("input#toppings").val();
+    const size = $("input#size").val();
+    let newOrder = new Pizza(toppings, size);
+    customerOrder.addToOrder(newOrder);
+    displayOrderDetails(customerOrder);
+  });
+});
 
 
