@@ -11,5 +11,42 @@
   <title>Pizza Parlor</title>
 </head>
 <body>
+    <div class="container">
+      <h1>Pizza Parlor</h1>
+      <h2>To begin placing your order, please make your selections in the form below.</h2>
+      <form id="pizza-order">
+        <p>Select a size</p>
+        <div class="radio">
+          <label>
+            <input type="radio" name="size" value="small">
+            Small 10"
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="size" value="medium" checked>
+            Medium 12"
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="size" value="large">
+            Large 14"
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="size" value="x-large">
+            X-Large 16"
+          </label>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Place Order</button>
+      </form>
+      <div id="output">
+        <p>Thanks for placing your order! Here are your order details: <br>
+        <span id="orders"></span></p>
+      </div>
+    </div>
 </body>
 </html>
