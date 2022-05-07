@@ -33,3 +33,9 @@ Code:
 Input: Medium 12"
 displayOrderDetails(customerOrder);
 Expected output: 5;
+
+Test: "It should display the details of the user's order"
+Code:
+Input: Medium 12"
+displayOrderDetails(customerOrder);
+Expected output: test;

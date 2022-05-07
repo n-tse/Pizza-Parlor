@@ -59,13 +59,14 @@ Pizza.prototype.listToppingsOrdered = function() {
 let customerOrder = new CustomerOrder();
 
 function displayOrderDetails(orderToDisplay) {
-  let orderList = $("ul#orders");
-  orderList.html("<li> test </li>")
+  let orderList = $("ul#userOrders");
+  // orderList.html("<li> test </li>")
   // let htmlForOrderList = "";
   // orderToDisplay.items.forEach(function(item) {
   //   htmlForOrderList += "<li>" + item.size + "size pizza with" + item.listToppingsOrdered() + ". Price: " + item.price + "</li>"
   // });
   // orderList.html(htmlForOrderList);
+  orderList.html("<li> test </li>");
 }
 
 $(document).ready(function() {
@@ -77,6 +78,7 @@ $(document).ready(function() {
     newOrder.price = newOrder.priceBySize() + newOrder.priceByToppings();
     customerOrder.addToOrder(newOrder);
     displayOrderDetails(customerOrder);
+    // $("#orders").html(displayOrderDetails(customerOrder))
     $("#output").show();
   });
 });
