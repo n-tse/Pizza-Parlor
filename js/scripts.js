@@ -24,8 +24,9 @@ Pizza.prototype.priceBySize = function() {
 }
 
 Pizza.prototype.priceByToppings = function() {
+  const proteins = ["pepperoni", "italian sausage", "grilled chicken", "ham", "bacon", "philly steak"];
   this.toppings.forEach(function(topping) {
-    if (topping.isProtein()) {
+    if (proteins.includes(this.topping)) {
       this.price += 0.50;
     } else {
       this.price += 0.25;
