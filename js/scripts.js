@@ -4,10 +4,17 @@
 
 function CustomerOrder() {
   this.items = [];
+  this.totalOrderPrice = 0;
 }
 
 CustomerOrder.prototype.addToOrder = function(newOrder) {
   this.items.push(newOrder);
+}
+
+CustomerOrder.prototype.calculateTotalPrice = function() {
+  this.items.forEach(function(item) {
+    totalOrderPrice += item.price;
+  });
 }
 
 function Pizza (toppings, size) {
