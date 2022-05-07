@@ -9,18 +9,28 @@ function customerOrder() {
 function Pizza (toppings, size) {
   this.toppings = [];
   this.size = "medium";
-  this.price = 6;
+  this.price = 5;
 }
 
 Pizza.prototype.priceBySize = function() {
   if (this.size === "small") {
-    this.price === 5;
+    this.price === 4;
   } else if (this.size === "large") {
-    this.price === 7;
+    this.price === 6;
   } else if (this.size === "x-large") {
-    this.price === 8;
+    this.price === 7;
   }
   return this.price;
+}
+
+Pizza.prototype.priceByToppings = function() {
+  this.toppings.forEach(function(topping) {
+    if (topping.isProtein()) {
+      this.price += 0.50;
+    } else {
+      this.price += 0.25;
+    }
+  });
 }
 
 $(document).ready(function() {
