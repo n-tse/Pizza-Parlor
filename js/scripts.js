@@ -2,7 +2,7 @@
 // create function to calculate price based on size selected: small 10", medium 12", large 14", X-large 16"
 // allow user can order multiple pizzas (probably need something like addressbook). Would you like to order more? If yes, new form. If no, display total $$ for the order and button to place order
 
-function customerOrder() {
+function CustomerOrder() {
   this.items = {};
 }
 
@@ -34,12 +34,15 @@ Pizza.prototype.priceByToppings = function() {
   });
 }
 
+let customerOrder = new CustomerOrder();
+
 $(document).ready(function() {
   $("form#pizza-order").submit(function(event) {
     event.preventDefault();
     const toppings = $("input#toppings").val();
     const size = $("input#size").val();
     let newOrder = new Pizza(toppings, size);
+    newOrder.price = newOrder.priceBySize + newOrder.priceByToppings;
     customerOrder.addToOrder(newOrder);
     displayOrderDetails(customerOrder);
   });
