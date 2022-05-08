@@ -15,7 +15,7 @@
       <h1>Pizza Parlor</h1>
       <h2>To begin placing your order, please make your selections in the form below.</h2>
       <form id="pizza-order">
-        <p>Select a size</p>
+        <legend>Select a size</legend>
         <div class="radio">
           <label>
             <input type="radio" name="size" value="small">
@@ -40,6 +40,34 @@
             X-Large 16"
           </label>
         </div>
+        <fieldset>
+          <legend>Choose your toppings</legend>
+      
+          <div>
+            <input type="checkbox" id="pepperoni" name="pepperoni">
+            <label for="pepperoni">Pepperoni</label>
+          </div>
+          <div>
+            <input type="checkbox" id="sausage" name="sausage">
+            <label for="sausage">Italian Sausage</label>
+          </div>
+          <div>
+            <input type="checkbox" id="chicken" name="chicken">
+            <label for="chicken">Grilled Chicken</label>
+          </div>
+          <div>
+            <input type="checkbox" id="ham" name="ham">
+            <label for="ham">Ham</label>
+          </div>
+          <div>
+            <input type="checkbox" id="bacon" name="bacon">
+            <label for="bacon">Bacon</label>
+          </div>
+          <div>
+            <input type="checkbox" id="steak" name="steak">
+            <label for="steak">Philly Steak</label>
+          </div>
+      </fieldset>
         <br>
         <button type="submit" class="btn btn-primary">Place Order</button>
       </form>
