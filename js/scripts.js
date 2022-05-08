@@ -74,9 +74,8 @@ $(document).ready(function() {
     $("input[name='toppings']:checked").each(function() {
       toppings.push($(this).val());
     });
-    // const toppings = $("input#toppings").val();
     const size = $("input:radio[name=size]:checked").val();
-    console.log("my debugs" + toppings + " " + size);
+    console.log("my debugs " + toppings + " " + size);
     let newOrder = new Pizza(toppings, size);
     newOrder.price = newOrder.priceBySize() + newOrder.priceByToppings();
     customerOrder.addToOrder(newOrder);
