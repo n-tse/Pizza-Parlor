@@ -14,9 +14,21 @@
 
 ## Description
 
+_This [webpage](https://n-tse.github.io/Pizza-Parlor/) is a web app that allows a user to build their own pizza by selecting a size and any number of toppings. Then, the page will show the user how much the total for their order is, as well as the details for each individual pizza they ordered._
+
 ## Setup/Installation Requirements
 
+* _Click on this [webpage](https://n-tse.github.io/Pizza-Parlor/)_
+* _Build a pizza by completing the form shown, and click "Add To Order" to view the details of your order_
+* _OR_
+* _Clone the repository to your device_
+* _Open the newly cloned 'pizza-parlor' directory_
+* _Click on index.html_
+* _Build a pizza by completing the form shown, and click "Add To Order" to view the details of your order_
+
 ## Known Bugs
+
+* _No known bugs_
 
 ## License
 
