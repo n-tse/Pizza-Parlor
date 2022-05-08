@@ -38,13 +38,24 @@ Pizza.prototype.priceBySize = function() {
 
 Pizza.prototype.priceByToppings = function() {
   const proteins = ["pepperoni", "sausage", "chicken", "ham", "bacon", "steak"];
+  let toppingsCost = 0;
+  // let that = this;
   this.toppings.forEach(function(topping) {
-    if (proteins.includes(this.topping)) {
-      this.price += 0.50;
+    // console.log(that.price);
+    console.log("A: "+ toppingsCost);
+    if (proteins.includes(topping)) {
+      // that.price += 0.50;
+      toppingsCost += 0.5;
+      console.log("B: "+toppingsCost);
     } else {
-      this.price += 0.25;
+      // that.price += 0.25;
+      toppingsCost += 0.25;
+      console.log("C: "+toppingsCost);
     }
+    console.log("D: "+toppingsCost);
+    // console.log("a2" + that.price);
   });
+  return toppingsCost;
 }
 
 Pizza.prototype.listToppingsOrdered = function() {
@@ -68,7 +79,7 @@ function displayOrderDetails(orderToDisplay) {
   let orderList = $("ul#userOrders");
   let htmlForOrderList = "";
   orderToDisplay.items.forEach(function(item) {
-    htmlForOrderList += "<li>" + item.size + " size pizza with " + item.listToppingsOrdered() + ". Price: " + item.price + "</li>"
+    htmlForOrderList += "<li>" + item.size + " size pizza with " + item.listToppingsOrdered() + ". Price: $" + item.price.toFixed(2) + "</li>"
   });
   orderList.html(htmlForOrderList);
 }
@@ -83,7 +94,13 @@ $(document).ready(function() {
     const size = $("input:radio[name=size]:checked").val();
 
     let newOrder = new Pizza(toppings, size);
+    // console.log("my debugs " + newOrder.toppings);
+    // console.log(typeof newOrder.toppings);
+    // newOrder.price = newOrder.priceBySize();
     newOrder.price = newOrder.priceBySize() + newOrder.priceByToppings();
+    // console.log(newOrder.priceBySize());
+    // console.log(newOrder.priceByToppings());
+    console.log(newOrder.price);
     customerOrder.addToOrder(newOrder);
     displayOrderDetails(customerOrder);
     $("#output").show();

@@ -48,7 +48,7 @@ Expected output: 7
 
 Describe: priceByToppings()
 
-Test: "It should add to the total price based on toppings selected by teh user"
+Test: "It should add to the total price based on toppings selected by the user"
 Code:
 Input: Medium 12", Pepperoni
 newOrder.priceByToppings();
