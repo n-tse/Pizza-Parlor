@@ -20,16 +20,18 @@ CustomerOrder.prototype.calculateTotalPrice = function() {
 function Pizza (toppings, size) {
   this.toppings = toppings;
   this.size = size;
-  this.price = 5;
+  this.price;
 }
 
 Pizza.prototype.priceBySize = function() {
-  if (this.size === "small") {
-    this.price === 4;
-  } else if (this.size === "large") {
-    this.price === 6;
-  } else if (this.size === "x-large") {
-    this.price === 7;
+  if (this.size === "10\" Small") {
+    this.price = 4;
+  } else if (this.size === "12\" Medium") {
+    this.price = 5;
+  } else if (this.size === "14\" Large") {
+    this.price = 6;
+  } else if (this.size === "16\" X-Large") {
+    this.price = 7;
   }
   return this.price;
 }
@@ -79,8 +81,10 @@ $(document).ready(function() {
       toppings.push($(this).val());
     });
     const size = $("input:radio[name=size]:checked").val();
+
     let newOrder = new Pizza(toppings, size);
-    newOrder.price = newOrder.priceBySize() + newOrder.priceByToppings();
+    // newOrder.price = newOrder.priceBySize() + newOrder.priceByToppings();
+    newOrder.price = newOrder.priceBySize();
     customerOrder.addToOrder(newOrder);
     displayOrderDetails(customerOrder);
     $("#output").show();

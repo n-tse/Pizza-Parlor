@@ -39,3 +39,9 @@ Code:
 Input: Medium 12"
 displayOrderDetails(customerOrder);
 Expected output: test
+
+Test: "It should display the total price of the user's order"
+Code:
+Input: X-Large 16"
+displayOrderDetails(customerOrder);
+Expected output: 7
