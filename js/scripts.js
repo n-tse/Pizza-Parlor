@@ -83,8 +83,7 @@ $(document).ready(function() {
     const size = $("input:radio[name=size]:checked").val();
 
     let newOrder = new Pizza(toppings, size);
-    // newOrder.price = newOrder.priceBySize() + newOrder.priceByToppings();
-    newOrder.price = newOrder.priceBySize();
+    newOrder.price = newOrder.priceBySize() + newOrder.priceByToppings();
     customerOrder.addToOrder(newOrder);
     displayOrderDetails(customerOrder);
     $("#output").show();

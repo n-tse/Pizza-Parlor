@@ -45,3 +45,11 @@ Code:
 Input: X-Large 16"
 displayOrderDetails(customerOrder);
 Expected output: 7
+
+Describe: priceByToppings()
+
+Test: "It should add to the total price based on toppings selected by teh user"
+Code:
+Input: Medium 12", Pepperoni
+newOrder.priceByToppings();
+Expected output: 5.5
