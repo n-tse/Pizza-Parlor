@@ -17,9 +17,9 @@ CustomerOrder.prototype.calculateTotalPrice = function() {
   });
 }
 
-function Pizza (toppings, size) {
+function Pizza (size) {
   this.toppings = [];
-  this.size = "medium";
+  this.size = size;
   this.price = 5;
 }
 
@@ -60,21 +60,21 @@ let customerOrder = new CustomerOrder();
 
 function displayOrderDetails(orderToDisplay) {
   let orderList = $("ul#userOrders");
-  // orderList.html("<li> test </li>")
-  // let htmlForOrderList = "";
-  // orderToDisplay.items.forEach(function(item) {
-  //   htmlForOrderList += "<li>" + item.size + "size pizza with" + item.listToppingsOrdered() + ". Price: " + item.price + "</li>"
-  // });
-  // orderList.html(htmlForOrderList);
-  orderList.html("<li> test </li>");
+  let htmlForOrderList = "";
+  orderToDisplay.items.forEach(function(item) {
+    htmlForOrderList += "<li>" + item.size + " size pizza with" + item.listToppingsOrdered() + ". Price: " + item.price + "</li>"
+  });
+  orderList.html(htmlForOrderList);
+  // orderList.html("<li> test </li>");
 }
 
 $(document).ready(function() {
   $("form#pizza-order").submit(function(event) {
     event.preventDefault();
     const toppings = $("input#toppings").val();
-    const size = $("input#size").val();
-    let newOrder = new Pizza(toppings, size);
+    const size = $("input:radio[name=size]:checked").val();
+    console.log("my debugs" + toppings + " " + size);
+    let newOrder = new Pizza(size);
     newOrder.price = newOrder.priceBySize() + newOrder.priceByToppings();
     customerOrder.addToOrder(newOrder);
     displayOrderDetails(customerOrder);
