@@ -4,7 +4,7 @@
 
 function CustomerOrder() {
   this.items = [];
-  this.totalOrderPrice = 0;
+  this.totalOrderPrice;
 }
 
 CustomerOrder.prototype.addToOrder = function(newOrder) {
@@ -12,9 +12,11 @@ CustomerOrder.prototype.addToOrder = function(newOrder) {
 }
 
 CustomerOrder.prototype.calculateTotalPrice = function() {
+  let runningTotal = 0;
   this.items.forEach(function(item) {
-    totalOrderPrice += item.price;
+    runningTotal += item.price;
   });
+  return runningTotal;
 }
 
 function Pizza (toppings, size) {
@@ -87,6 +89,7 @@ $(document).ready(function() {
     newOrder.price = newOrder.priceBySize() + newOrder.priceByToppings();
     customerOrder.addToOrder(newOrder);
     displayOrderDetails(customerOrder);
+    console.log(customerOrder.calculateTotalPrice());
     $("#output").show();
   });
 });

@@ -53,3 +53,12 @@ Code:
 Input: Medium 12", Pepperoni
 newOrder.priceByToppings();
 Expected output: 5.5
+
+Describe: calculateTotalPrice()
+
+Test: "It should take the price for each pizza ordered and add them all up to return the total price for the entire order"
+Code:
+Input: Medium 12", Italian Sausage
+Input: X-Large 16", Pepperoni, Grilled Chicken, Bacon
+customerOrder.calculateTotalPrice();
+Expected output: 14
