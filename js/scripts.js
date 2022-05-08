@@ -89,7 +89,6 @@ $(document).ready(function() {
     newOrder.price = newOrder.priceBySize() + newOrder.priceByToppings();
     customerOrder.addToOrder(newOrder);
     displayOrderDetails(customerOrder);
-    console.log(customerOrder.calculateTotalPrice());
     $("#output").show();
   });
 });
