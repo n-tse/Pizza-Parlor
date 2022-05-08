@@ -47,10 +47,14 @@ Pizza.prototype.priceByToppings = function() {
 
 Pizza.prototype.listToppingsOrdered = function() {
   let htmlForToppingsOrdered = "";
-  for (let i = 0; i < this.toppings.length; i++) {
-    htmlForToppingsOrdered += this.toppings[i];
-    if (i < this.toppings.length - 1) {
-      htmlForToppingsOrdered += ", ";
+  if (this.toppings.length === 0) {
+    htmlForToppingsOrdered += "no toppings"
+  } else {
+    for (let i = 0; i < this.toppings.length; i++) {
+      htmlForToppingsOrdered += this.toppings[i];
+      if (i < this.toppings.length - 1) {
+        htmlForToppingsOrdered += ", ";
+      }
     }
   }
   return htmlForToppingsOrdered;
@@ -75,7 +79,6 @@ $(document).ready(function() {
       toppings.push($(this).val());
     });
     const size = $("input:radio[name=size]:checked").val();
-    console.log("my debugs " + toppings + " " + size);
     let newOrder = new Pizza(toppings, size);
     newOrder.price = newOrder.priceBySize() + newOrder.priceByToppings();
     customerOrder.addToOrder(newOrder);
